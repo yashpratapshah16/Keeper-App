@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, deleteDoc, getDocs, getFirestore,doc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB02lDD_MD5tAqpWyfeVQ0RU99T5uFZUgY",
+  apiKey:process.env.APIKEY,
   authDomain: "keeper-app-ec296.firebaseapp.com",
   projectId: "keeper-app-ec296",
   storageBucket: "keeper-app-ec296.appspot.com",
@@ -39,3 +39,5 @@ export const FirebaseProvider = (props) => {
     </firebaseContext.Provider>
   );
 };
+
+
