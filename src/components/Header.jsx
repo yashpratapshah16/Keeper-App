@@ -1,22 +1,11 @@
 import React from "react";
-import NotesIcon from "@mui/icons-material/Notes";
-import { useFirebase } from "../context/Firebase";
-import Profile from "./Profile";
-
-export default function Header() {
-  const firebase = useFirebase();
+import NotesIcon from '@mui/icons-material/Notes';
+function Header() {
   return (
     <header>
-      <h1 className=" my-5">
-        <NotesIcon />
-        Keeper{" "}
-      </h1>
-      {firebase.isLoggedIn && (
-        <>
-          {/* <Button onClick={() => firebase.logout()}>Logout</Button> */}
-          <Profile />
-        </>
-      )}
+      <h1><NotesIcon/>Keeper </h1>
     </header>
   );
 }
+
+export default Header;
