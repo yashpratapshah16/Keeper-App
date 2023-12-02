@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 * {
   padding: 0;
   margin: 0;
@@ -9,22 +14,28 @@ html {
 body {
   background: #eee;
   background-image: url("https://transparenttextures.com/patterns/gplay.png");
-  padding: 0 16px;
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #a6cf98;
-  margin: auto -16px;
-  padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
+  font-size: x-large;
+  margin-left: 30px;
+  justify-self: start;
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
 }
-
+header img{
+  margin-right: 30px;
+  justify-self: end;
+}
 footer {
   position: absolute;
   text-align: center;
