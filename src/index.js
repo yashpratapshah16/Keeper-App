@@ -1,11 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import App from "./App";
 import { FirebaseProvider } from "./context/Firebase";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "@material-tailwind/react";
 
-ReactDOM.render(
-  <FirebaseProvider>
-    <App />
-  </FirebaseProvider>,
-  document.getElementById("root")
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <BrowserRouter>
+        <FirebaseProvider>
+          <App />
+        </FirebaseProvider>
+      </BrowserRouter>
+    </ThemeProvider>
+  </React.StrictMode>
 );
