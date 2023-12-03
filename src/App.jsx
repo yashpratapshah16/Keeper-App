@@ -35,9 +35,11 @@ export default function App() {
             <>
               <IsUserProvider>
                 <CreateArea />
+                <div className=" px-20">
                 {notes.map((note) => (
                   <Note key={note.id} id={note.id} {...note.data()} />
                 ))}
+                </div>
               </IsUserProvider>
             </>
           }
