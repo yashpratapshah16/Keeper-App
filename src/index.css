@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   padding: 0;
   margin: 0;
@@ -14,6 +13,11 @@ html {
 body {
   background: #eee;
   background-image: url("https://transparenttextures.com/patterns/gplay.png");
+}
+.App{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -36,12 +40,9 @@ header img{
   justify-self: end;
 }
 
-
-
 footer {
-  position: absolute;
+  margin-top: auto;
   text-align: center;
-  bottom: 0;
   width: 100%;
   height: 2.5rem;
 }
@@ -121,6 +122,9 @@ form.create-note button {
     width: 20rem;
   }
   .Notes{
-    margin-left:0;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
   }
 }

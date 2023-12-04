@@ -35,7 +35,7 @@ export default function App() {
 
 
   return (
-    <>
+    <div className="App">
       <Header />
       <Routes>
         <Route
@@ -45,7 +45,7 @@ export default function App() {
               <IsUserProvider>
                 <CreateArea func={handleEmpty}/>
                 {noteBool&& <MyAlert color="red" message="Both the Field must have few characters"/>}
-                <div className="Notes">
+                <div className=" ml-16">
                 {notes.map((note) => (
                   <Note key={note.id} id={note.id} {...note.data()} />
                 ))}
@@ -59,6 +59,6 @@ export default function App() {
       </Routes>
       {Bool && <MyAlert color="green" message="User is Logged IN!!" />}
       <Footer />
-    </>
+    </div>
   );
 }
