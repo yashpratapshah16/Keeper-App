@@ -23,6 +23,10 @@ function CreateArea(props) {
   }
   function handleClick(event) {
     event.preventDefault();
+    if(note.title==="" || note.content===""){
+      props.func();
+      return ;
+    }
     firebase.addNote(note);
     setNote({
       title: "",

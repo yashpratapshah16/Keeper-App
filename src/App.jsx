@@ -14,6 +14,7 @@ export default function App() {
   const [notes, setNotes] = useState([]);
   const firebase = useFirebase();
   const [Bool,setBool]=useState(false);
+  const [noteBool,setnoteBool]=useState(false);
   useEffect(() => {
     firebase.isLoggedIn &&
       firebase.getALLNotes().then((notes) => setNotes(notes.docs)); 
@@ -25,6 +26,14 @@ export default function App() {
     }, 4000);
   },[firebase])
 
+  const handleEmpty=()=>{
+    setnoteBool(true);
+    setTimeout(() => {
+      setnoteBool(false);
+    }, 4000);
+  }
+
+
   return (
     <>
       <Header />
@@ -34,8 +43,9 @@ export default function App() {
           element={
             <>
               <IsUserProvider>
-                <CreateArea />
-                <div className=" px-20">
+                <CreateArea func={handleEmpty}/>
+                {noteBool&& <MyAlert color="red" message="Both the Field must have few characters"/>}
+                <div className="Notes">
                 {notes.map((note) => (
                   <Note key={note.id} id={note.id} {...note.data()} />
                 ))}

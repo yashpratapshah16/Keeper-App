@@ -6,8 +6,8 @@ import Profile from "./Profile";
 export default function Header() {
   const firebase = useFirebase();
   return (
-    <header className=" sm:h-20">
-      <h1 className="sm:text-4xl">
+    <header className="h-20">
+      <h1>
         <NotesIcon fontSize="large" />
         Keeper{" "}
       </h1>
