@@ -23,14 +23,14 @@ export default function App() {
     firebase.isLoggedIn && setBool(true);
     setTimeout(() => {
       setBool(false);
-    }, 4000);
+    }, 5000);
   },[firebase])
 
   const handleEmpty=()=>{
     setnoteBool(true);
     setTimeout(() => {
       setnoteBool(false);
-    }, 4000);
+    }, 5000);
   }
 
 
@@ -45,7 +45,7 @@ export default function App() {
               <IsUserProvider>
                 <CreateArea func={handleEmpty}/>
                 {noteBool&& <MyAlert color="red" message="Both the Field must have few characters"/>}
-                <div className=" ml-16">
+                <div className="Notes ml-16">
                 {notes.map((note) => (
                   <Note key={note.id} id={note.id} {...note.data()} />
                 ))}

@@ -55,7 +55,7 @@ const SignIn = () => {
     setTimeout(() => {
       setBool(false);
       setErrorBool(false);
-    }, 4000);
+    }, 5000);
   }, [errorBool]);
 
   return (
